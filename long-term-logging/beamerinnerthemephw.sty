@@ -1,0 +1,36 @@
+\mode<presentation>
+
+\setbeamertemplate{background}{
+    \begin{tikzpicture}
+        \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+        \fill[color=phenomgreen] (0,0) rectangle(1,1.618);
+        \fill[color=phenomgreen] (0,\the\paperheight - 0.1cm) rectangle (\the\paperwidth,\the\paperheight);
+        \node[inner sep=0pt, anchor=south west] (star) at (0,0){
+            \includegraphics[width=1cm]{phenom-star.png}
+        };
+    \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{phw}[1][]
+{ 
+    \vskip6cm
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{title page header}
+        \bfseries\usebeamerfont{title}\inserttitle\par
+    \end{beamercolorbox}
+    \vskip1.1cm
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{author}
+        \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \vskip0.2cm
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{date}
+        \usebeamerfont{author}\insertdate
+    \end{beamercolorbox}
+    \vfill
+}
+
+% Items
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
+
+\mode<all>
