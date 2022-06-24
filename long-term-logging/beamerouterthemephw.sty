@@ -1,24 +1,43 @@
 \mode<presentation>
 
-% Frame title
-\defbeamertemplate*{frametitle}{phw}[1][]
+% For
+% head- and footline
+% sidebars
+% logo
+% frametitle
+
+% \setbeamertemplate{frametitle}
+% {
+%     \vskip0cm
+%     \begin{beamercolorbox}[wd=\paperwidth,ht=1.2cm]{frametitle} 
+%         \begin{tikzpicture}
+%             \useasboundingbox[fill=white](0,0) rectangle(\the\paperwidth,1.2);
+%             \ifx\insertframesubtitle\@empty
+%             {
+%                 \node[anchor=west, phenomgreen!70!black, font=\bfseries\large] at (0,0.61){\insertframetitle};
+%             }
+%             \else
+%             {
+%                 \node[anchor=west, phenomgreen!70!black, font=\bfseries\large] at (0,0.81){\insertframetitle};
+%                 \node[anchor=west, phenomgreen!70!black, font=\small] at (0,0.41){\insertframesubtitle};
+%             }
+%             \fi
+%         \end{tikzpicture}
+%     \end{beamercolorbox}
+% }
+
+% \setbeamertemplate{headline}
+% {
+%     \begin{beamercolorbox}{section in head/foot}
+%         \vskip2pt\insertnavigation{\paperwidth}\vskip2pt
+%     \end{beamercolorbox}
+% }
+
+\setbeamertemplate{footline}
 {
-    \vskip0cm
-    \begin{beamercolorbox}[wd=\paperwidth,ht=1.2cm]{frametitle} 
-        \begin{tikzpicture}
-            \useasboundingbox[fill=white](0,0) rectangle(\the\paperwidth,1.2);
-            \ifx\insertframesubtitle\@empty
-            {
-                \node[anchor=west, phenomgreen!70!black, font=\bfseries\large] at (0,0.61){\insertframetitle};
-            }
-            \else
-            {
-                \node[anchor=west, phenomgreen!70!black, font=\bfseries\large] at (0,0.81){\insertframetitle};
-                \node[anchor=west, phenomgreen!70!black, font=\small] at (0,0.41){\insertframesubtitle};
-            }
-            \fi
-        \end{tikzpicture}
-    \end{beamercolorbox}
+    \hspace*{\fill}
+    \usebeamercolor[fg]{normal text in head/foot}
+    \insertframenumber\,/\,\inserttotalframenumber
 }
 
 \mode<all>

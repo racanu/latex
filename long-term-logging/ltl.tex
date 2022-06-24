@@ -1,5 +1,6 @@
 \documentclass[t, 9pt, aspectratio=169]{beamer}
 \usetheme{phw}
+\usepackage{multicol}
 
 \title{Long Time Logging}
 \subtitle{}
@@ -12,15 +13,16 @@
         \titlepage
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Outline}
-        \tableofcontents
+    \begin{frame}{Outline}
+        \begin{multicols}{2}
+            \tableofcontents
+        \end{multicols}
     \end{frame}
 
     \section{Round Robin Database}
     \subsection{Data Collection and Storage}
 
-    \begin{frame}{Round Robin Database}{Data Collection and Storage}
+    \begin{frame}{\secname}{\subsecname}
         \begin{itemize}
             \item Collects data from multiple \highlight{data sources}
             \begin{itemize}
@@ -30,7 +32,7 @@
             \begin{itemize}
                 \item archives are defined at database level
                 \item each archive defines a data sample frequency (rate) e.g. one value every second, every minute, every hour
-                \item also, the last value\footnotemark of each data source is available
+                \item the last value\footnotemark of each data source is available as well
             \end{itemize}
             \footnotetext{not same as last stored value}
         \end{itemize}
@@ -41,7 +43,7 @@
 
     \subsection{Aggregation/Resampling}
 
-    \begin{frame}{Round Robin Database}{Aggregation/Resampling}
+    \begin{frame}{\secname}{\subsecname}
         \begin{figure}
             \includegraphics[scale=0.35]{rrdb-structure.jpg}
         \end{figure}
@@ -54,7 +56,7 @@
 
     \subsection{Trivia}
 
-    \begin{frame}{Round Robin Database}{Trivia}
+    \begin{frame}{\secname}{\subsecname}
         The current database is setup with 3 archives containing data samples for
         \begin{itemize}
             \item every second for 72 hours
@@ -67,36 +69,36 @@
     \section{Data Aggregation}
     \subsection{Supersampling}
 
-    \begin{frame}{Data Aggregation}{Supersampling}
-        \vspace{-1cm}
+    \begin{frame}{\secname}{\subsecname}
+        \vspace{-0.5cm}
         \begin{figure}
-            \hspace*{-1cm}\includegraphics[scale=0.5]{collected-data-5s.jpg}
-            \hspace*{-1cm}\includegraphics[scale=0.5]{aggregate-max-1s.jpg}
+            \includegraphics[scale=0.5]{collected-data-5s.jpg}
+            \includegraphics[scale=0.5]{aggregate-max-1s.jpg}
         \end{figure}
     \end{frame}
 
     \subsection{Subsampling}
 
-    \begin{frame}{Data Aggregation}{Subsampling}
-        \vspace{-1cm}
+    \begin{frame}{\secname}{\subsecname}
+        \vspace{-0.5cm}
         \begin{figure}
-            \hspace*{-1cm}\includegraphics[scale=0.5]{collected-data-5s.jpg}
-            \hspace*{-1cm}\includegraphics[scale=0.5]{aggregate-max-1min.jpg}
+            \includegraphics[scale=0.5]{collected-data-5s.jpg}
+            \includegraphics[scale=0.5]{aggregate-max-1min.jpg}
         \end{figure}
     \end{frame}
 
-    \begin{frame}{Data Aggregation}{Subsampling}
-        \vspace{-1cm}
+    \begin{frame}{\secname}{\subsecname}
+        \vspace{-0.5cm}
         \begin{figure}
-            \hspace*{-1cm}\includegraphics[scale=0.5]{collected-data-5s.jpg}
-            \hspace*{-1cm}\includegraphics[scale=0.5]{aggregate-avg-1min.jpg}
+            \hspace*{0cm}\includegraphics[scale=0.5]{collected-data-5s.jpg}
+            \hspace*{0cm}\includegraphics[scale=0.5]{aggregate-avg-1min.jpg}
         \end{figure}
     \end{frame}
 
     \section{Round Robin Database}
     \subsection{Limitations}
     
-    \begin{frame}{Data Aggregation}{Limitations}
+    \begin{frame}{\secname}{\subsecname}
         \begin{itemize}
             \item Fixed size database\footnotemark, long term history of value evolution
             \item Total size (hence number of data sources and aggregates) to be kept in check
@@ -109,7 +111,7 @@
     \section{Operational Values}
     \subsection{Which Values to Log?}
     
-    \begin{frame}{Operational Values}{Which Values to Log?}
+    \begin{frame}{\secname}{\subsecname}
         \begin{itemize}
             \item Define a list or a method to identify the values (and aggregations) to be recorded in the long term database
             \begin{itemize}
@@ -124,16 +126,19 @@
         \end{itemize}
     \end{frame}
 
-    \begin{frame}{Operational Values}{In TestUI}
-        \vspace*{-1cm}
+    \subsection{In TestUI}
+
+    \begin{frame}{\secname}{\subsecname}
+        \vspace*{-0.5cm}
         \begin{figure}
             \hspace*{-0.8cm}\includegraphics[scale=0.37]{tad-accessors-xl2.jpg}
         \end{figure}
         Not all values can or should be logged.
     \end{frame}
 
-    \begin{frame}{Operational Values}{In PhenomServiceTool}
-        \vspace*{-1cm}
+    \subsection{In PhenomServiceTool}
+
+    \begin{frame}{\secname}{\subsecname}
         \begin{figure}
             \hspace*{0.5cm}\includegraphics[scale=0.47]{tad-accessors-service-tool.jpg}
         \end{figure}
@@ -141,7 +146,7 @@
 
     \subsection{Plan}
 
-    \begin{frame}{Operational Values}{Plan}
+    \begin{frame}{\secname}{\subsecname}
         \begin{itemize}
             \item Add all "sensible" TAD values and the two already requested (Stigmation and SourceTilt)
             \item Decide on how to handle totals and counters
@@ -151,9 +156,9 @@
     \end{frame}
 
     \begin{frame}{Operational Values}{In SysInfoViewer}
-        \vspace*{-0.8cm}
+        \vspace*{-0.5cm}
         \begin{figure}
-            \hspace*{-0.7cm}\includegraphics[scale=0.5]{rrdb-in-sysinfoviewer.jpg}
+            \includegraphics[scale=0.6]{rrdb-in-sysinfoviewer.jpg}
         \end{figure}
     \end{frame}
 
